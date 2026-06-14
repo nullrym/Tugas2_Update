@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jastip Choco.pop - Cek Pesanan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-cokelat shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🍫 Choco.pop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cek-pesanan.html">Cek Pesanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Admin Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 text-center p-4">
+                    <h3 class="text-cokelat fw-bold mb-3">Cek Status Pemesanan</h3>
+                    <p class="text-muted">Masukkan kode pesanan (ID Order) yang dikirim via WA:</p>
+                    
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" id="inputId" placeholder="Contoh: XCXC-0000">
+                        <button class="btn btn-custom" type="button" onclick="tampilkanHasil()">CEK STATUS</button>
+                    </div>
+
+                    <div class="card text-start border-warning shadow-sm" id="hasilPencarian" style="display: none;">
+                        <div class="card-header bg-warning text-dark fw-bold">
+                            Hasil Pencarian
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-1"><strong>Nama:</strong> NUZULIA</p>
+                            <p class="mb-1"><strong>Produk:</strong> Album LNGSHOT - standard ver. (1x)</p>
+                            <p class="mb-1"><strong>Status:</strong> <span class="badge bg-success">Transit (DC Cakung)</span></p>
+                            <p class="mb-0"><strong>No. Resi:</strong> JNT000000000000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-cokelat text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1"><strong>Lokasi:</strong> Banjarmasin | <strong>Telepon:</strong> 08123-4269-3459 | <strong>Sosmed:</strong> @Choco.pop</p>
+            <small>&copy; 2026 Nuzulia Sekti Mahanania - NIM 2510817220006</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function tampilkanHasil() {
+            let inputUser = document.getElementById("inputId").value;
+            if(inputUser === "") {
+                alert("Silakan masukkan ID Order terlebih dahulu!");
+            } else {
+                document.getElementById("hasilPencarian").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
